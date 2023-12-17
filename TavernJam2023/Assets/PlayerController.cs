@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     float moveLimiter = 0.7f;
 
     public float runSpeed = 20.0f;
+    Animator animator;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -26,13 +28,29 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (horizontal == 0 && vertical == 0)
+        {
+            animator.SetBool("isRunning", false);
+        }
+        else
+        {
+            if (horizontal > 0)
+            {
+                this.transform.localScale = new Vector3(1f, 1f, 1f);
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(-1f, 1f, 1f);
+                animator.SetBool("isRunning", true);
+            }
+        }
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
         {
             // limit movement speed diagonally, so you move at 70% speed
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
-
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 }
