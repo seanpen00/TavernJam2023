@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            animator.SetBool("isDead", true);
+        }
+
     }
 
     void FixedUpdate()
@@ -53,4 +58,6 @@ public class PlayerController : MonoBehaviour
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
+
+
 }

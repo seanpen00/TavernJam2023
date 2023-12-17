@@ -5,7 +5,7 @@ public class ThrowRock : MonoBehaviour
 {
     public GameObject rockPrefab;
     private float throwForce = 5f;
-    private float arcHeight = 3f;
+    private float arcHeight = 2f;
     private int maxRocks = 3;
     private List<GameObject> rocks = new List<GameObject>();
 
