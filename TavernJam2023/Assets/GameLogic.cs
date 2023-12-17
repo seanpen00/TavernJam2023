@@ -7,6 +7,10 @@ public class GameLogic : MonoBehaviour
 {
 
     public static int timer = 100;
+    public static int difficulty = 1;
+
+    int mob1_total_spawn = 30;
+    int mob1_map_limit = 10;
 
     [SerializeField] TextMeshProUGUI timerText;
 
