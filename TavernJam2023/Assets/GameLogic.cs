@@ -36,7 +36,6 @@ public class GameLogic : MonoBehaviour
         {
             // execute block of code here
             timer -= 1;
-            Debug.Log("timer");
             yield return new WaitForSeconds(1f);
 
         }

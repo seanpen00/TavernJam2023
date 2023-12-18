@@ -7,12 +7,14 @@ using UnityEngine.AI;
 public class GoblinScript : MonoBehaviour
 {
 
-    [SerializeField] Transform target;
+    GameObject target;
     NavMeshAgent agent;
+    public int health = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.Find("Satyr");
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -21,7 +23,12 @@ public class GoblinScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
+        if (health <= 0)
+        {
+            GameLogic.timer += 5;
+            Destroy(this.gameObject);
+        }
+        agent.SetDestination(target.transform.position);
     }
 
     //private void OnMouseDown()
@@ -30,15 +37,4 @@ public class GoblinScript : MonoBehaviour
     //    GameLogic.timer += 5;
     //    Destroy(gameObject);
     //}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Hit by rock.");
-        if (collision.gameObject.tag == "Weapon_Rock")
-        {
-            Debug.Log("BRUH");
-            GameLogic.timer += 5;
-            Destroy(gameObject);
-        }
-    }
 }

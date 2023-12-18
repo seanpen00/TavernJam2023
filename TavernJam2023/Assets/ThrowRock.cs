@@ -4,10 +4,22 @@ using System.Collections.Generic;
 public class ThrowRock : MonoBehaviour
 {
     public GameObject rockPrefab;
-    private float throwForce = 5f;
-    private float arcHeight = 2f;
+    [SerializeField] public AudioClip throwSound; // Serialized field for the rock throw sound
+    private AudioSource audioSource;
+    private float throwForce = 7f;
+    private float arcHeight = 1f;
     private int maxRocks = 3;
     private List<GameObject> rocks = new List<GameObject>();
+
+    void Start()
+    {
+        // Ensure there is an AudioSource component and get a reference to it
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,6 +38,12 @@ public class ThrowRock : MonoBehaviour
         GameObject rock = Instantiate(rockPrefab, transform.position, Quaternion.identity);
         rocks.Add(rock);
         StartCoroutine(ArcRock(rock));
+
+        // Play throw sound
+        if (throwSound != null)
+        {
+            audioSource.PlayOneShot(throwSound);
+        }
     }
 
     Vector3 GetThrowDirection()
@@ -54,4 +72,5 @@ public class ThrowRock : MonoBehaviour
 
         Destroy(rock);
     }
+
 }
