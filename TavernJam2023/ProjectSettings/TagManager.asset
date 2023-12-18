@@ -7,6 +7,7 @@ TagManager:
   - Weapon_Rock
   - Goblin
   - Trash_Monster
+  - Miniball
   layers:
   - Default
   - TransparentFX
