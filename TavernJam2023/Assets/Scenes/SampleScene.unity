@@ -884,11 +884,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1828254641163733434, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.5
+      value: -15.94
       objectReference: {fileID: 0}
     - target: {fileID: 1828254641163733434, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 1828254641163733434, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -921,6 +921,18 @@ PrefabInstance:
     - target: {fileID: 1828254641163733434, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183073908559798126, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183073908559798126, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183073908559798126, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7652580129454737039, guid: 550000e3c07a9ac42b2861df77535eca, type: 3}
       propertyPath: m_Name
@@ -20254,7 +20266,7 @@ GameObject:
   - component: {fileID: 1883037814}
   m_Layer: 0
   m_Name: Satyr
-  m_TagString: Untagged
+  m_TagString: Satyr
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21361,7 +21373,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 289116974783651315, guid: 604f90f5fe567b54a9b3f101da8203f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26
+      value: -39.7
       objectReference: {fileID: 0}
     - target: {fileID: 289116974783651315, guid: 604f90f5fe567b54a9b3f101da8203f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21422,7 +21434,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1361481829655634452, guid: d0b4cf6f771e1d142bd0506fc84a89e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.1
+      value: -39.800003
       objectReference: {fileID: 0}
     - target: {fileID: 1361481829655634452, guid: d0b4cf6f771e1d142bd0506fc84a89e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21556,7 +21568,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6950195390481730551, guid: f8c5d54197206954193ae084bf7253d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.070726
+      value: -39.77073
       objectReference: {fileID: 0}
     - target: {fileID: 6950195390481730551, guid: f8c5d54197206954193ae084bf7253d6, type: 3}
       propertyPath: m_LocalPosition.y

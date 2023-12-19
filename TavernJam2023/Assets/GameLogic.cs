@@ -14,6 +14,8 @@ public class GameLogic : MonoBehaviour
     int mob1_total_spawn = 30;
     int mob1_map_limit = 10;
 
+    int goblinHealth = 2;
+
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI totalTimerText;
 
