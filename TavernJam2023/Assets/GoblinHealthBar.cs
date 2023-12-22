@@ -17,6 +17,6 @@ public class GoblinHealthBar : MonoBehaviour
     void Update()
     {
         currentHealth = goblinScript.health;
-        transform.localScale = new Vector3(.5f * currentHealth, 0.03f, 0.125f); 
+        transform.localScale = new Vector3(.5f * currentHealth, 0.16f, 0.125f); 
     }
 }

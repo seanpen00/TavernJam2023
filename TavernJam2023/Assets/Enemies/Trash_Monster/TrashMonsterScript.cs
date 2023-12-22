@@ -10,6 +10,8 @@ public class TrashMonsterScript : MonoBehaviour
     public int health = 10;
     Animator anim;
     private bool isDead = false;
+    BoxCollider2D bc2d;
+    GameObject playerTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class TrashMonsterScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        bc2d = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class TrashMonsterScript : MonoBehaviour
         {
             isDead = true;
             agent.enabled = false;
+            bc2d.enabled = false;
             anim.SetTrigger("isDead");
         }
         else if (!isDead)
@@ -51,6 +55,7 @@ public class TrashMonsterScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Satyr") == true)
         {
             anim.SetTrigger("isAttacking");
+
         }
     }
 
@@ -59,5 +64,12 @@ public class TrashMonsterScript : MonoBehaviour
         GameLogic.timer += 30;
         isDead = false;
         Destroy(gameObject);
+    }
+
+    void DoDamage()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Satyr");
+        PlayerController playerScript = player.GetComponent<PlayerController>();
+        playerScript.health -= 1;
     }
 }
